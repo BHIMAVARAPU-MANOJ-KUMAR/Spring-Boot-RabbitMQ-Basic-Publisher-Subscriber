@@ -13,4 +13,11 @@ public class Subscribers {
 	public void consumeMessageFromQueue(OrderStatus status) {
 		System.out.println("Message received from Queue : " + status);
 	}
+	
+	@RabbitListener(queues = Configurations.QUEUE)
+	public void consumeMessageStringFromQueue(String message) {
+		System.out.println("Message received from Queue. "
+				+ "Implemented by Scheduling Concept. " + 
+				message);
+	}
 }
